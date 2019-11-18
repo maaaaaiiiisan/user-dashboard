@@ -1,13 +1,15 @@
-<div class="m-3">
+<div class="row m-3">
     <table class="table mb-5 d-flex　w-100 font-weight-normal">
         <thead>
             <tr class="">
                 <th scope="col">Id</th>
                 <th scope="col">User</th>
-                <th scope="col">Password</th>
-                <th scope="col">Email</th>
+                <th scope="col">TwitterId</th>
+                <th scope="col">TwitterLink</th>
+                <th scope="col">Date</th>
                 <th scope="col">Profile</th>
-                <th scope="col">Destroy</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -15,13 +17,15 @@
                 <tr>
                     <td><%= u.id %></td>
                     <td><%= u.name %></td>
-                    <td><%= u.password %></td>
-                    <td><%= u.email %></td>
+                    <td><%= u.twitterId %></td>
+                    <td><%= u.twitterLink %></td>
+                    <td><%= u.date %></td>
                     <td><a href="#">View Profile</a></td>
+                    <td><a href="#">Edit</a></td>
                     <td><button type="button" class="btn btn-danger">X</button></td>
                 </tr>
             <% end %>
         </tbody>
     </table>
-    <a href="#">Create new user</a>
+    <%=link_to "Add new user", new_user_path %>
 </div>
