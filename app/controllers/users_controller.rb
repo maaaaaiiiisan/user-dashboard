@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :fetch_userList, only: [:update, :edit, :destroy]
   def index
     @users = User.all
   end
@@ -11,13 +12,40 @@ class UsersController < ApplicationController
   end
 
   def create
-    @users = User.new
+    @user = User.new(user_params)
+    @user.save
+    redirect_to root_path, notice:"新規登録が完了しました"
   end
 
   def update
+    if @user.update(user_params)
+      redirect_to root_path, notice:"修正が完了しました"
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @user.destroy
+    redirect_to root_path, notice:"削除が完了しました"
   end
 
+  private
+
+  def fetch_userList
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(
+      :name,
+      :twitterId,
+      :country,
+      :position,
+      :date,
+      :twitterLink,
+      :twitterArticle,
+      :memo
+    )
+  end
 end

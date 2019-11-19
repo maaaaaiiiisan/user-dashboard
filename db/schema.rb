@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191118123123) do
+ActiveRecord::Schema.define(version: 20191119121055) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "twitterId"
+    t.string "country"
+    t.string "position"
+    t.date "date"
     t.string "twitterLink"
-    t.string "date"
+    t.string "twitterArticle"
+    t.string "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

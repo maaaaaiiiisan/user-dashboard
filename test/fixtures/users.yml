@@ -3,11 +3,19 @@
 one:
   name: MyString
   twitterId: MyString
+  country: MyString
+  position: MyString
+  date: 2019-11-19
   twitterLink: MyString
-  date: MyString
+  twitterArticle: MyString
+  memo: MyString
 
 two:
   name: MyString
   twitterId: MyString
+  country: MyString
+  position: MyString
+  date: 2019-11-19
   twitterLink: MyString
-  date: MyString
+  twitterArticle: MyString
+  memo: MyString
