@@ -13,8 +13,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to root_path, notice:"新規登録が完了しました"
+    if params[:back]
+      render :new
+    elsif @user.save
+      redirect_to root_path, notice:"新規登録が完了しました"
+    else
+      render :new
+    end
   end
 
   def update
@@ -23,6 +28,10 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def confirm
+    @user = User.new(user_params)
   end
 
   def destroy

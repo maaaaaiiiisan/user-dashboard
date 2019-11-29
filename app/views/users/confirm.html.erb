@@ -1,6 +1,6 @@
 <div class="container">
     <div class="my-3">
-        <%= form_for @user, url: {action: 'confirm'} do |f|  %>
+        <%= form_for @user do |f|  %>
             <div class="form-group col-8 d-flex pb-2">
                 <%= f.label :name, "Name", class:"pr-2" %>
                 <%= f.text_field :name, class: "form-control text-monospace" %>
@@ -32,6 +32,9 @@
             <div class="form-group col-8 d-flex pb-2">
                 <%= f.label :memo, "Memo" %>
                 <%= f.text_field :memo, class: "form-control text-monospace" %>
+            </div>
+            <div class="actions">
+                <%= f.submit 'Back', name: 'back'
             </div>
             <%= f.submit %>
         <% end %>

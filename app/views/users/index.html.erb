@@ -295,35 +295,37 @@
       </div>
 
 
-      <div class="row m-3 col-12">
-        <table class="table mb-5 d-flex　w-100 font-weight-normal">
-            <thead>
-                <tr class="">
-                    <th scope="col">Id</th>
-                    <th scope="col">TwitterId</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Profile</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @users.each do |u| %>
-                    <tr>
-                        <td><%= u.id %></td>
-                        <td><%= u.twitterId %></td>
-                        <td><%= u.country %></td>
-                        <td><%= u.position %></td>
-                        <td><%= u.date %></td>
-                        <td><%=link_to "View Profile", u.twitterLink %></td>
-                        <td><%=link_to "Edit", edit_user_path(u)%></td>
-                        <td><%= link_to "X", user_path(u), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
-                    </tr>
-                <% end %>
-            </tbody>
-        </table>
+      <div class="row">
+        # <div class="col-lg-2">
+          <table class="table mb-5 d-flex　w-100 font-weight-normal">
+              <thead>
+                  <tr class="">
+                      <th scope="col">Id</th>
+                      <th scope="col">TwitterId</th>
+                      <th scope="col">Country</th>
+                      <th scope="col">Position</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Profile</th>
+                      <th scope="col">Edit</th>
+                      <th scope="col">Delete</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <% @users.each do |u| %>
+                      <tr>
+                          <td><%= u.id %></td>
+                          <td><%= u.twitterId %></td>
+                          <td><%= u.country %></td>
+                          <td><%= u.position %></td>
+                          <td><%= u.date %></td>
+                          <td><%=link_to "View Profile", u.twitterLink %></td>
+                          <td><%=link_to "Edit", edit_user_path(u)%></td>
+                          <td><%= link_to "X", user_path(u), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
+                      </tr>
+                  <% end %>
+              </tbody>
+          </table>
+        # </div>
         <%=link_to "Add new user", new_user_path %>
     </div>
       <!--/.row -->
