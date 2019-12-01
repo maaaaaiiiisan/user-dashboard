@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="my-3">
+        <%= form_for @yoga, url: {action: 'confirm'} do |f|  %>
+            <div class="form-group col-8 d-flex pb-2">
+                <%= f.label :date, "Date", class:"pr-2" %>
+                <%= f.text_field :date, class: "form-control text-monospace" %>
+            </div>
+            <div class="form-group col-8 d-flex pb-2">
+                <%= f.label :lesson, "Lesson" %>
+                <%= f.text_field :lesson, class: "form-control text-monospace" %>
+            </div>
+            <div class="form-group col-8 d-flex pb-2">
+                <%= f.label :category, "Category" %>
+                <%= f.text_field :category, class: "form-control text-monospace" %>
+            </div>
+            <div class="form-group col-8 d-flex pb-2">
+                <%= f.label :level, "Level" %>
+                <%= f.text_field :level, class: "form-control text-monospace" %>
+            </div>
+            <%= f.submit %>
+        <% end %>
+    </div>
+</div>

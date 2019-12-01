@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root "users#index"
-  resources :users do
+  root "yogas#index"
+  resources :yogas do
     member do
-      post 'confirm'
+      patch 'confirm'
     end
   end
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 
+  lesson: 
+  category: 
+  level: MyString
+
+two:
+  date: 
+  lesson: 
+  category: 
+  level: MyString
