@@ -1,6 +1,11 @@
+<div class="col-12">
+aaaaaaa
+</div>
+
+
 <div class="container">
     <div class="my-3">
-        <%= form_for @yoga, url: {action: 'confirm'} do |f|  %>
+        <%= form_for @yoga, url:yogas_path do |f|  %>
             <div class="form-group col-8 d-flex pb-2">
                 <%= f.label :date, "Date", class:"pr-2" %>
                 <%= f.text_field :date, class: "form-control text-monospace" %>
