@@ -17,7 +17,9 @@
 </head>
 
 <body data-spy="scroll" data-offset="64" data-target="#section-topbar">
-
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+  <% end %>
   <div id="headerwrap">
     <div class="container">
       <div class="row centered">
@@ -54,32 +56,32 @@
   <section id="work" name="work">
     <div class="container desc">
       <div class="row">
-          <table class="table mb-5 d-flex　w-100 font-weight-normal">
-              <thead>
-                  <tr class="">
-                      <th scope="col">Id</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">Lesson</th>
-                      <th scope="col">Catgory</th>
-                      <th scope="col">Level</th>
-                      <th scope="col">Edit</th>
-                      <th scope="col">Delete</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <% @yogas.each do |u| %>
-                      <tr>
-                          <td><%= u.id %></td>
-                          <td><%= u.date %></td>
-                          <td><%= u.lesson %></td>
-                          <td><%= u.category %></td>
-                          <td><%= u.level %></td>
-                          <td><%=link_to "Edit", edit_yoga_path(u)%></td>
-                          <td><%= link_to "X", yoga_path(u), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
-                      </tr>
-                  <% end %>
-              </tbody>
-          </table>
+        <table class="table mb-5 d-flex　w-100 font-weight-normal">
+            <thead>
+                <tr class="">
+                    <th scope="col">Id</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Lesson</th>
+                    <th scope="col">Catgory</th>
+                    <th scope="col">Level</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @yogas.each do |u| %>
+                    <tr>
+                        <td><%= u.id %></td>
+                        <td><%= u.date %></td>
+                        <td><%= u.lesson %></td>
+                        <td><%= u.category %></td>
+                        <td><%= u.level %></td>
+                        <td><%=link_to "Edit", edit_yoga_path(u)%></td>
+                        <td><%= link_to "X", yoga_path(u), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
         <%=link_to "Add Yoga", new_yoga_path %>
     </div>
       <br>

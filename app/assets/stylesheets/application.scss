@@ -391,3 +391,10 @@ body {
     font-weight: 600;
     margin: 15px 0;
   }
+  .alert-alert {
+    @extend .alert-danger;
+  }
+
+  .alert-notice {
+    @extend .alert-success;
+  }

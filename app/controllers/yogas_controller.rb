@@ -18,7 +18,7 @@ class YogasController < ApplicationController
     #   render :new
     # elsif
       if @yoga.save
-      redirect_to root_path, notice:"新規登録が完了しました"
+      redirect_to root_path, notice:"ヨガレッスンの新規登録が完了しました"
     else
       render :new
     end
@@ -41,7 +41,7 @@ class YogasController < ApplicationController
 
   def destroy
     @yoga.destroy
-    redirect_to root_path, notice:"削除が完了しました"
+    redirect_to root_path, notice:"ヨガレッスンを削除しました"
   end
 
   private
