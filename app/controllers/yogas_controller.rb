@@ -13,10 +13,6 @@ class YogasController < ApplicationController
 
   def create
     @yoga = Yoga.new(params.require(:yoga).permit(:date, :lesson, :category, :level))
-    #@yoga = Yoga.new(yoga_params)
-    # if params[:back]
-    #   render :new
-    # elsif
       if @yoga.save
       redirect_to root_path, notice:"ヨガレッスンの新規登録が完了しました"
     else
@@ -26,12 +22,6 @@ class YogasController < ApplicationController
 
   def confirm
     @yoga = Yoga.new(params.require(:yoga).permit(:date, :lesson, :category, :level))
-    # if @yoga.update(yoga_params)
-    #   redirect_to root_path, notice:"修正が完了しました"
-    # else
-    #   render 'index'
-    # end
-
     return if @yoga.valid?
     render :index
   end

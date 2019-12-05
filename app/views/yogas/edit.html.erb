@@ -1,23 +1,50 @@
-<div class="container">
-    <div class="my-3">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Yogini History</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+</head>
+<body data-spy="scroll" data-offset="64" data-target="#section-topbar">
+<div class="row">
+    <div class="col-12">
+        <div class="text-center my-5">
+            <h2 class="font-weight-bold">Edit lesson</h2>
+        </div>
         <%= form_for @yoga, url: {action: 'confirm'} do |f|  %>
-            <div class="form-group col-8 d-flex pb-2">
-                <%= f.label :date, "Date", class:"pr-2" %>
-                <%= f.text_field :date, class: "form-control text-monospace" %>
+            <div class="form-group mx-5 pb-2 text-left">
+                <%= f.label :date, "Date", class:"pr-2 font-weight-bold new__label" %>
+                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                    <%= f.text_field :date, class: "form-control datetimepicker-input", data: {target: '#datetimepicker1'} %>
+                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group col-8 d-flex pb-2">
-                <%= f.label :lesson, "Lesson" %>
+            <div class="form-group mx-5 pb-2 text-left">
+                <%= f.label :lesson_id, "Lesson", class:"pr-2 font-weight-bold new__label" %>
                 <%= f.text_field :lesson, class: "form-control text-monospace" %>
             </div>
-            <div class="form-group col-8 d-flex pb-2">
-                <%= f.label :category, "Category" %>
+            <div class="form-group mx-5 pb-2 text-left">
+                <%= f.label :category, "Category", class:"pr-2 font-weight-bold new__label" %>
                 <%= f.text_field :category, class: "form-control text-monospace" %>
             </div>
-            <div class="form-group col-8 d-flex pb-2">
-                <%= f.label :level, "Level" %>
+            <div class="form-group mx-5 pb-2 text-left">
+                <%= f.label :level, "Level", class:"pr-2 font-weight-bold new__label" %>
                 <%= f.text_field :level, class: "form-control text-monospace" %>
             </div>
-            <%= f.submit %>
+            <div class="text-center">
+                <%= f.submit :class=>"btn-center btn-outline-warning btn-lg" %>
+            </div>
         <% end %>
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
+</body>
+</html>
