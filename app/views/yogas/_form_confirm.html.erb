@@ -1,0 +1,27 @@
+<%= form_for @yoga do |f|  %>
+    <div class="form-group mx-5 pb-2 text-left">
+        <%= f.label :date, "Date", class:"pr-2 font-weight-bold new__label" %>
+        <%= f.hidden_field :date %>
+        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+            <div class="datetimepicker-input"><%= @yoga.date %></div>
+        </div>
+    </div>
+    <div class="form-group mx-5 pb-2 text-left">
+        <%= f.label :lesson_id, "Lesson", class:"pr-2 font-weight-bold new__label" %>
+        <%= f.hidden_field :lesson %>
+        <div class="datetimepicker-input"><%= @yoga.lesson %></div>
+    </div>
+    <div class="form-group mx-5 pb-2 text-left">
+        <%= f.label :category, "Category", class:"pr-2 font-weight-bold new__label" %>
+        <%= f.hidden_field :category %>
+        <div class="datetimepicker-input"><%= @yoga.category %></div>
+    </div>
+    <div class="form-group mx-5 pb-2 text-left">
+        <%= f.label :level, "Level", class:"pr-2 font-weight-bold new__label" %>
+        <%= f.hidden_field :level %>
+        <div class="datetimepicker-input"><%= @yoga.level %></div>
+    </div>
+    <div class="text-center">
+        <%= f.submit :class=>"btn-center btn-outline-warning btn-lg" %>
+    </div>
+<% end %>

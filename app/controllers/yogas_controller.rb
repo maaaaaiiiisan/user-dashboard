@@ -8,10 +8,8 @@ class YogasController < ApplicationController
     @yoga = Yoga.new
   end
 
-  def confirm
+  def create_confirm
     @yoga = Yoga.new(yoga_params)
-    return if @yoga.valid?
-    render :index
   end
 
   def create
