@@ -13,7 +13,7 @@
         <div class="text-center my-5">
             <h2 class="font-weight-bold">Edit lesson</h2>
         </div>
-        <%= form_for @yoga, url: {action: 'confirm'} do |f|  %>
+        <%= form_for @yoga, url:edit_confirm_yoga_path do |f|  %>
             <div class="form-group mx-5 pb-2 text-left">
                 <%= f.label :date, "Date", class:"pr-2 font-weight-bold new__label" %>
                 <div class="input-group date" id="datetimepicker1" data-target-input="nearest">

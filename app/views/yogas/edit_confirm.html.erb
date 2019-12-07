@@ -13,7 +13,7 @@
         <div class="text-center my-5">
             <h2 class="font-weight-bold">Please confirm</h2>
         </div>
-        <%= form_for @yoga, url:yogas_path do |f|  %>
+        <%= form_for @yoga do |f|  %>
             <div class="form-group mx-5 pb-2 text-left">
                 <%= f.label :date, "Date", class:"pr-2 font-weight-bold new__label" %>
                 <%= f.hidden_field :date %>
