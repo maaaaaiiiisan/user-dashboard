@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Yogini History</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+</head>
+<body data-spy="scroll" data-offset="64" data-target="#section-topbar">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table mb-5 d-flex　w-100 font-weight-normal">
+        <thead>
+          <tr class="">
+              <th scope="col">Id</th>
+              <th scope="col">Lesson</th>
+              <th scope="col">Catgory</th>
+              <th scope="col">Level</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @lessons.each do |l| %>
+            <tr>
+                <td><%= l.id %></td>
+                <td><%= l.lesson %></td>
+                <td><%= l.category %></td>
+                <td><%= l.level %></td>
+                <td><%=link_to "Edit", edit_lesson_path(l) %></td>
+                <td><%= link_to "X", lesson_path(l), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <%=link_to "Add Lesson", new_lesson_path %>
+  </div>
+</div>
+</body>
+</html>

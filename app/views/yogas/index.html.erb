@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <section id="about" name="about">
+  <section>
     <div id="intro">
       <div class="container">
         <div class="row">
@@ -36,7 +36,7 @@
       </div>
     </div>
   </section>
-  <section id="work" name="work">
+  <section>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -67,7 +67,55 @@
             </tbody>
           </table>
         </div>
-        <%=link_to "Add Yoga", new_yoga_path %>
+        <%=link_to "Add History", new_yoga_path %>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h5>ABOUT</h5>
+          </div>
+          <div class="col-lg-6">
+            <p>I'm web designer & front-end developer with 7 years of professional experience. I'm interested in all kinds of visual communication, but my major focus is on designing web, mobile & tablet interfaces. I also have skills in other fields like
+              branding, icon design or web development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table mb-5 d-flex　w-100 font-weight-normal">
+            <thead>
+              <tr class="">
+                  <th scope="col">Id</th>
+                  <th scope="col">Lesson</th>
+                  <th scope="col">Catgory</th>
+                  <th scope="col">Level</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @yogas.each do |u| %>
+                <tr>
+                    <td><%= u.id %></td>
+                    <td><%= u.lesson %></td>
+                    <td><%= u.category %></td>
+                    <td><%= u.level %></td>
+                    <td><%=link_to "Edit", edit_yoga_path(u)%></td>
+                    <td><%= link_to "X", yoga_path(u), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <%=link_to "Add Lesson", new_yoga_path %>
       </div>
     </div>
   </section>

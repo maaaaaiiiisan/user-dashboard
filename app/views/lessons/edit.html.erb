@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Yogini History</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+</head>
+<body data-spy="scroll" data-offset="64" data-target="#section-topbar">
+<div class="row">
+    <div class="col-12">
+        <div class="text-center my-5">
+            <h2 class="font-weight-bold">Edit lesson</h2>
+        </div>
+        <%= form_for @lesson, url:edit_confirm_lesson_path do |l|  %>
+            <div class="form-group mx-5 pb-2 text-left">
+                <%= l.label :lesson_id, "Lesson", class:"pr-2 font-weight-bold new__label" %>
+                <%= l.text_field :lesson, class: "form-control text-monospace" %>
+            </div>
+            <div class="form-group mx-5 pb-2 text-left">
+                <%= l.label :category, "Category", class:"pr-2 font-weight-bold new__label" %>
+                <%= l.text_field :category, class: "form-control text-monospace" %>
+            </div>
+            <div class="form-group mx-5 pb-2 text-left">
+                <%= l.label :level, "Level", class:"pr-2 font-weight-bold new__label" %>
+                <%= l.text_field :level, class: "form-control text-monospace" %>
+            </div>
+            <div class="text-center">
+                <%= l.submit :class=>"btn-center btn-outline-warning btn-lg" %>
+            </div>
+        <% end %>
+    </div>
+</div>
+</body>
+</html>
