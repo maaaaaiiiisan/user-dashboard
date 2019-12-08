@@ -53,15 +53,15 @@
               </tr>
             </thead>
             <tbody>
-              <% @yogas.each do |u| %>
+              <% @yogas.each do |y| %>
                 <tr>
-                    <td><%= u.id %></td>
-                    <td><%= u.date %></td>
-                    <td><%= u.lesson %></td>
-                    <td><%= u.category %></td>
-                    <td><%= u.level %></td>
-                    <td><%=link_to "Edit", edit_yoga_path(u)%></td>
-                    <td><%= link_to "X", yoga_path(u), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
+                    <td><%= y.id %></td>
+                    <td><%= y.date %></td>
+                    <td><%= y.lesson %></td>
+                    <td><%= y.category %></td>
+                    <td><%= y.level %></td>
+                    <td><%=link_to "Edit", edit_yoga_path(y)%></td>
+                    <td><%= link_to "X", yoga_path(y), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
                 </tr>
               <% end %>
             </tbody>
