@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root "yogas#index"
   resources :yogas, only:[:new, :create, :edit, :destroy, :update] do
     collection do
       post :create_confirm
