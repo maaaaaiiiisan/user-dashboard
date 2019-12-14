@@ -15,7 +15,7 @@ class YogasController < ApplicationController
   def create
     @yoga = Yoga.new(yoga_params)
     if @yoga.save
-      redirect_to root_path, notice:"ヨガレッスンの新規登録が完了しました"
+      redirect_to yogas_path, notice:"ヨガレッスンの新規登録が完了しました"
     else
       render :new
     end
@@ -30,13 +30,13 @@ class YogasController < ApplicationController
 
   def update
     if @yoga.update(yoga_params)
-      redirect_to root_path, notice:"変更を反映しました。"
+      redirect_to yogas_path, notice:"変更を反映しました。"
     end
   end
 
   def destroy
     @yoga.destroy
-    redirect_to root_path, notice:"ヨガレッスンを削除しました"
+    redirect_to yogas_path, notice:"ヨガレッスンを削除しました"
   end
 
   private

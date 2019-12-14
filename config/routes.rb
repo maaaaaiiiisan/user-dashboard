@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :yogas, only:[:new, :create, :edit, :destroy, :update] do
+  root 'pages#home'
+  resources :yogas, only:[:index, :new, :create, :edit, :destroy, :update] do
     collection do
       post :create_confirm
     end

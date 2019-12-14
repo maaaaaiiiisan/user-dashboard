@@ -1,47 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Yogini History</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-</head>
-<body data-spy="scroll" data-offset="64" data-target="#section-topbar">
-<header>
-  <nav class="m-3">
-      <ul class="text-align-right">
-          <li><a href="home">ホーム</a></li>
-          <li><a href="lesson">レッスン</a></li>
-          <li><a href="yoga">受講履歴</a></li>
-      </ul>
-  </nav>
-</header>
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
-  <% end %>
-  <div id="headerwrap">
-    <div class="container">
-      <div class="row centered">
-        <div class="col-lg-12">
-          <h2 style="color:#de580d">My Yogini History</h2>
-          <h3 style="color:#de580d">since 30 on Sep in 2019</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-  <section>
-    <div id="intro">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h5>ABOUT</h5>
-          </div>
-          <div class="col-lg-6">
-            <p>I'm web designer & front-end developer with 7 years of professional experience. I'm interested in all kinds of visual communication, but my major focus is on designing web, mobile & tablet interfaces. I also have skills in other fields like
-              branding, icon design or web development.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
+<html>
+  <head>
+    <title>Yogini History</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
 </html>

@@ -20,11 +20,11 @@
             </div>
             <div class="form-group mx-5 pb-2 text-left">
                 <%= l.label :category, "Category", class:"pr-2 font-weight-bold new__label" %>
-                <%= l.text_field :category, class: "form-control text-monospace" %>
+                <%= l.select :category, ['', 'BASIC', 'POWER', 'RELAX', 'SOUND', 'BODYMAKE'],{class: "form-control text-monospace"} %>
             </div>
             <div class="form-group mx-5 pb-2 text-left">
                 <%= l.label :level, "Level", class:"pr-2 font-weight-bold new__label" %>
-                <%= l.text_field :level, class: "form-control text-monospace" %>
+                <%= l.select :level, ['', '1.5', '2', '2.5', '3', '3.5'], {}, {class: "form-control text-monospace"} %>
             </div>
             <div class="text-center">
                 <%= l.submit :class=>"btn-center btn-outline-warning btn-lg" %>

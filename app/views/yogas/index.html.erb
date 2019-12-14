@@ -1,49 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Yogini History</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-</head>
-<body data-spy="scroll" data-offset="64" data-target="#section-topbar">
-<header>
-  <nav class="m-3">
-      <ul class="text-align-right">
-          <li><a href="home">ホーム</a></li>
-          <li><a href="lesson">レッスン</a></li>
-          <li><a href="yoga">受講履歴</a></li>
-      </ul>
-  </nav>
-</header>
+  <%= render :partial => "header" %>
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
   <% end %>
-  <div id="headerwrap">
-    <div class="container">
-      <div class="row centered">
-        <div class="col-lg-12">
-          <h2 style="color:#de580d">My Yogini History</h2>
-          <h3 style="color:#de580d">since 30 on Sep in 2019</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-  <section>
-    <div id="intro">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h5>ABOUT</h5>
-          </div>
-          <div class="col-lg-6">
-            <p>I'm web designer & front-end developer with 7 years of professional experience. I'm interested in all kinds of visual communication, but my major focus is on designing web, mobile & tablet interfaces. I also have skills in other fields like
-              branding, icon design or web development.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -53,7 +13,7 @@
                   <th scope="col">Id</th>
                   <th scope="col">Date</th>
                   <th scope="col">Lesson</th>
-                  <th scope="col">Catgory</th>
+                  <th scope="col">Category</th>
                   <th scope="col">Level</th>
                   <th scope="col">Edit</th>
                   <th scope="col">Delete</th>
@@ -74,57 +34,8 @@
             </tbody>
           </table>
         </div>
-        <%=link_to "Add History", new_yoga_path %>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div id="intro">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h5>ABOUT</h5>
-          </div>
-          <div class="col-lg-6">
-            <p>I'm web designer & front-end developer with 7 years of professional experience. I'm interested in all kinds of visual communication, but my major focus is on designing web, mobile & tablet interfaces. I also have skills in other fields like
-              branding, icon design or web development.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <table class="table mb-5 d-flex　w-100 font-weight-normal">
-            <thead>
-              <tr class="">
-                  <th scope="col">Id</th>
-                  <th scope="col">Lesson</th>
-                  <th scope="col">Catgory</th>
-                  <th scope="col">Level</th>
-                  <th scope="col">Edit</th>
-                  <th scope="col">Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @yogas.each do |u| %>
-                <tr>
-                    <td><%= u.id %></td>
-                    <td><%= u.lesson %></td>
-                    <td><%= u.category %></td>
-                    <td><%= u.level %></td>
-                    <td><%=link_to "Edit", edit_yoga_path(u)%></td>
-                    <td><%= link_to "X", yoga_path(u), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
         <%=link_to "Add Lesson", new_yoga_path %>
       </div>
     </div>
-  </section>
 </body>
 </html>
