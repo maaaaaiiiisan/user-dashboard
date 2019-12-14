@@ -2,6 +2,9 @@ class YogasController < ApplicationController
   before_action :fetch_yogaList, only: [:edit, :edit_confirm, :destroy, :update]
   def index
     @yogas = Yoga.all
+    # @lessons = Lesson.all
+    # @yoga = Yoga.first
+    # @lesson = @yoga.lesson
   end
 
   def new

@@ -24,9 +24,9 @@
                 <tr>
                     <td><%= y.id %></td>
                     <td><%= y.date %></td>
-                    <td><%= y.lesson %></td>
-                    <td><%= y.category %></td>
-                    <td><%= y.level %></td>
+                    <td><%= y.lesson.lesson %></td>
+                    <td><%= y.lesson.category %></td>
+                    <td><%= y.lesson.level %></td>
                     <td><%=link_to "Edit", edit_yoga_path(y)%></td>
                     <td><%= link_to "X", yoga_path(y), method: :delete, data:{confirm: "Are you sure to delete?"}, class:"btn btn-danger" %></td>
                 </tr>
