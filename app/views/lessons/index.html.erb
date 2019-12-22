@@ -23,7 +23,7 @@
             <% @lessons.each do |l| %>
               <tr>
                 <td><%= l.id %></td>
-                <td><%= l.lesson %></td>
+                <td><%= l.name %></td>
                 <td><%= l.category %></td>
                 <td><%= l.level %></td>
                 <td><%=link_to "Edit", edit_lesson_path(l) %></td>

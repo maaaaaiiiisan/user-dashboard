@@ -2,9 +2,6 @@ class YogasController < ApplicationController
   before_action :fetch_yogaList, only: [:edit, :edit_confirm, :destroy, :update]
   def index
     @yogas = Yoga.all
-    # @lessons = Lesson.all
-    # @yoga = Yoga.first
-    # @lesson = @yoga.lesson
   end
 
   def new
@@ -17,7 +14,7 @@ class YogasController < ApplicationController
 
   def create
     @yoga = Yoga.new(yoga_params)
-    if @yoga.save
+    if @yoga.save!
       redirect_to yogas_path, notice:"ヨガレッスンの新規登録が完了しました"
     else
       render :new
@@ -51,9 +48,7 @@ class YogasController < ApplicationController
   def yoga_params
     params.require(:yoga).permit(
       :date,
-      :lesson,
-      :category,
-      :level
+      :name
     )
   end
 end

@@ -13,16 +13,7 @@
 ActiveRecord::Schema.define(version: 20191207055931) do
 
   create_table "lessons", force: :cascade do |t|
-    t.string "lesson"
-    t.string "category"
-    t.string "level"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.date "date"
-    t.string "lesson"
+    t.string "name"
     t.string "category"
     t.string "level"
     t.datetime "created_at", null: false
@@ -31,9 +22,8 @@ ActiveRecord::Schema.define(version: 20191207055931) do
 
   create_table "yogas", force: :cascade do |t|
     t.date "date"
-    t.string "lesson"
-    t.string "category"
-    t.string "level"
+    t.string "name"
+    t.integer "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

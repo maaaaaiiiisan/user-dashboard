@@ -25,7 +25,7 @@
             </div>
             <div class="form-group mx-5 pb-2 text-left">
                 <%= f.label :lesson_id, "Lesson", class:"pr-2 font-weight-bold new__label" %>
-                <%= f.collection_select :lesson, Lesson.all, :lesson, :lesson, {prompt: ""}, {class: "form-control text-monospace"} %>
+                <%= f.collection_select :name, Lesson.all, :name, :name, {prompt: ""}, {class: "form-control text-monospace"} %>
             </div>
             <div class="text-center">
                 <%= f.submit :class=>"btn-center btn-outline-warning btn-lg" %>

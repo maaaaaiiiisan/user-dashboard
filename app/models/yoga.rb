@@ -1,3 +1,3 @@
 class Yoga < ApplicationRecord
-    belongs_to :lesson, foreign_key: :lesson, primary_key: :lesson
+    belongs_to :lesson, foreign_key: :name, primary_key: :name
 end

@@ -47,7 +47,7 @@ class LessonsController < ApplicationController
 
   def lesson_params
     params.require(:lesson).permit(
-      :lesson,
+      :name,
       :category,
       :level
     )

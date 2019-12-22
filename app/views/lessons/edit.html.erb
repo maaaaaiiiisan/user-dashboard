@@ -16,7 +16,7 @@
         <%= form_for @lesson, url:edit_confirm_lesson_path do |l|  %>
             <div class="form-group mx-5 pb-2 text-left">
                 <%= l.label :lesson_id, "Lesson", class:"pr-2 font-weight-bold new__label" %>
-                <%= l.text_field :lesson, class: "form-control text-monospace" %>
+                <%= l.text_field :name, class: "form-control text-monospace" %>
             </div>
             <div class="form-group mx-5 pb-2 text-left">
                 <%= l.label :category, "Category", class:"pr-2 font-weight-bold new__label" %>

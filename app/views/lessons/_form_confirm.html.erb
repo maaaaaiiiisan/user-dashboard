@@ -1,8 +1,8 @@
 <%= form_for @lesson do |l|  %>
     <div class="form-group mx-5 pb-2 text-left">
         <%= l.label :lesson_id, "Lesson", class:"pr-2 font-weight-bold new__label" %>
-        <%= l.hidden_field :lesson %>
-        <div class="datetimepicker-input"><%= @lesson.lesson %></div>
+        <%= l.hidden_field :name %>
+        <div class="datetimepicker-input"><%= @lesson.name %></div>
     </div>
     <div class="form-group mx-5 pb-2 text-left">
         <%= l.label :category, "Category", class:"pr-2 font-weight-bold new__label" %>
