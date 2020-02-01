@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'pages#home'
   resources :yogas, only:[:index, :new, :create, :edit, :destroy, :update] do
     collection do
