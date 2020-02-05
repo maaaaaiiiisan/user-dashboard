@@ -1,25 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# user-dashboard
+ヨガ記録アプリを作りながら、
+以下の学習内容をアウトプットしました。
+※一部デザインが未完成なところあり。
+- CRUD
+- belongs_to, has_many
+- erbの書き方
