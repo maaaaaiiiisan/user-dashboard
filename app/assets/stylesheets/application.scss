@@ -425,3 +425,20 @@ body {
   .alert-notice {
     @extend .alert-success;
   }
+
+/* Copyright Wrap */
+.header {
+  &__logo {
+      width: 150px;
+      height: auto;
+  }
+}
+table {
+  width: 100%;
+  word-break: break-word;
+  word-wrap: break-word;
+  font-size: 10px;
+}
+.font-pink {
+  color: #ff5657;
+}

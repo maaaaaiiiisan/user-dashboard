@@ -16,9 +16,9 @@
         <%= form_for @yoga, url:edit_confirm_yoga_path do |f|  %>
             <div class="form-group mx-5 pb-2 text-left">
                 <%= f.label :date, "Date", class:"pr-2 font-weight-bold new__label" %>
-                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                    <%= f.text_field :date, class: "form-control datetimepicker-input", data: {target: '#datetimepicker1'} %>
-                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                <div class="input-group date" id="datepicker" data-target-input="nearest">
+                    <%= f.text_field :date, class: "form-control datetimepicker-input", data: {target: '#datepicker'} %>
+                    <div class="input-group-append" data-target="#datepicker" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
 </div>
 <script type="text/javascript">
     $(function () {
-        $('#datetimepicker1').datetimepicker();
+        $('#datepicker').datepicker();
     });
 </script>
 </body>

@@ -4,18 +4,26 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 </head>
 <body data-spy="scroll" data-offset="64" data-target="#section-topbar">
-<header class="mb-5">
-  <nav class="m-4">
-      <ul class="text-align-right">
-        <li><%= link_to "ホーム", root_path %></li>
-        <% if user_signed_in? %>
-          <li><%= link_to "ログイン", new_user_session_path %></li>
-          <li><%= link_to "新規登録", new_user_registration_path %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path %></li>
-        <% else %>
-          <li><%= link_to "レッスン", lessons_path %></li>
-          <li><%= link_to "受講履歴", yogas_path %></li>
-        <% end %>
-      </ul>
-  </nav>
+<header class="m-1">
+  <div class="d-flex">
+    <a class="header__logo" href="/">
+      <img class="header__logo" src="/assets/logo.png" />
+    </a>
+    <div class="d-flex justify-content-center align-items-center ml-auto">
+      <% if user_signed_in? %>
+        <%= link_to "ログアウト", destroy_user_session_path, class: "font-weight-bold" %>
+      <% else %>
+        <div class="d-flex">
+          <%= link_to "ログイン", new_user_session_path, class: "font-weight-bold" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "font-weight-bold" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <% if user_signed_in? %>
+    <div class="d-flex m-3">
+      <%= link_to "レッスン一覧", lessons_path, class: "w-50 text-center font-weight-bold" %>
+      <%= link_to "受講履歴", yogas_path, class: "w-50 text-center font-weight-bold" %>
+    </div>
+  <% end %>
 </header>

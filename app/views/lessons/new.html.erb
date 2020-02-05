@@ -15,10 +15,6 @@
         </div>
         <%= form_for @lesson, url:create_confirm_lessons_path do |l|  %>
             <div class="form-group mx-5 pb-2 text-left">
-                <%= l.label :lesson_id, "Lesson", class:"pr-2 font-weight-bold new__label" %>
-                <%= l.text_field :name, class: "form-control text-monospace" %>
-            </div>
-            <div class="form-group mx-5 pb-2 text-left">
                 <%= l.label :category, "Category", class:"pr-2 font-weight-bold new__label" %>
                 <%= l.select :category, ['', 'BASIC', 'POWER', 'RELAX', 'SOUND', 'BODYMAKE'], {}, {class: "form-control text-monospace"} %>
             </div>

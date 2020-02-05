@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Yogini History</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-</head>
+<%= render :partial => "header" %>
 <body data-spy="scroll" data-offset="64" data-target="#section-topbar">
 <div class="row">
     <div class="col-12">
         <div class="text-center my-5">
-            <h2 class="font-weight-bold">Add new lesson</h2>
+            <h4 class="font-weight-bold">レッスンを追加してください</h4>
         </div>
         <%= form_for @yoga, url:create_confirm_yogas_path do |f|  %>
             <div class="form-group mx-5 pb-2 text-left">
                 <%= f.label :date, "Date", class:"pr-2 font-weight-bold new__label" %>
-                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                    <%= f.text_field :date, class: "form-control datetimepicker-input", data: {target: '#datetimepicker1'} %>
-                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                <div class="input-group date" id="datepicker" data-target-input="nearest">
+                    <%= f.text_field :date, class: "form-control datepicker-input", data: {target: '#datepicker'} %>
+                    <div class="input-group-append" data-target="#datepicker" data-toggle="datepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
                 </div>
@@ -35,7 +29,7 @@
 </div>
 <script type="text/javascript">
     $(function () {
-        $('#datetimepicker1').datetimepicker();
+        $('#datepicker').datetimepicker();
     });
 </script>
 </body>

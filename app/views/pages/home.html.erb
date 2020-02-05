@@ -4,12 +4,12 @@
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
   <% end %>
-  <div id="headerwrap">
+  <div id="headerwrap" class="pt-0">
     <div class="container">
       <div class="row centered">
         <div class="col-lg-12">
-          <h2 style="color:#de580d">My Yogini History</h2>
-          <h3 style="color:#de580d">since 30 on Sep in 2019</h3>
+          <h6 style="color: #ff5657" class="font-weight-bold">LAVAの受講履歴を<br />まとめることができます。</h6>
+          <img class="w-100" src="../assets/top_img.jpg" />
         </div>
       </div>
     </div>
