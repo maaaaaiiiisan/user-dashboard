@@ -4,3 +4,5 @@
 - CRUD
 - belongs_to, has_many
 - erbの書き方
+- 確認画面を追加
+- flash
